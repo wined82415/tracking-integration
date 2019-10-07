@@ -1,0 +1,26 @@
+{
+  "name": "ad-integration",
+  "version": "1.0.0",
+  "description": "washop 廣告整合",
+  "main": "index.js",
+  "author": "wabow",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "run": "node ./dist/index.js"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "prettier": "1.18.2",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "rxjs": "^6.5.3"
+  }
+}
