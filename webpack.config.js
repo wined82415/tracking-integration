@@ -4,9 +4,6 @@ module.exports = {
   mode: 'production',
   devtool: 'source-map',
   entry: './src/index.ts',
-  devServer: {
-    contentBase: './dist'
-  },
   module: {
     rules: [
       {
@@ -25,7 +22,11 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js']
   },
   output: {
-    filename: 'waduit.js',
+    libraryTarget: 'umd',
+    library: 'tracking-integration',
+    umdNamedDefine: true,
+    globalObject: 'this',
+    filename: 'waudit.js',
     path: path.resolve(__dirname, 'dist')
   }
 }
