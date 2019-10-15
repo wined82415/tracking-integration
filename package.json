@@ -9,18 +9,25 @@
   "scripts": {
     "watch": "webpack --watch",
     "build": "webpack",
-    "run": "node ./dist/index.js"
+    "run": "node ./dist/index.js",
+    "test": "jest --config jest.config.js --colors",
+    "test:watch": "jest --config jest.config.js --colors --watch"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.18",
     "jest": "^24.9.0",
     "prettier": "1.18.2",
     "source-map-loader": "^0.2.4",
+    "ts-jest": "^24.1.0",
     "ts-loader": "^6.2.0",
     "typescript": "^3.6.3",
     "webpack": "^4.41.0",
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
-    "rxjs": "^6.5.3"
+    "@types/lodash": "^4.14.144",
+    "rxjs": "^6.5.3",
+    "test": "^0.6.0"
   }
 }
