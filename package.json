@@ -2,7 +2,7 @@
   "name": "tracking-integration",
   "version": "1.0.0",
   "description": "washop 廣告整合",
-  "main": "index.js",
+  "main": "dist/waduit.js",
   "author": "wabow",
   "license": "MIT",
   "private": true,
