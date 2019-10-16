@@ -1,6 +1,6 @@
 {
   "name": "tracking-integration",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "washop 廣告整合",
   "main": "dist/waudit.js",
   "author": "wabow",

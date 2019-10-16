@@ -36,4 +36,8 @@ export class ListenerCreator implements TrackingEvent {
   onCheckoutFinish(callback: (eventData?: EventData) => {}) {
     return EventListener.on('checkout-finish', callback, this.flag)
   }
+
+  getEventListener() {
+    return EventListener
+  }
 }

@@ -103,4 +103,10 @@ describe('監聽器製造器測試', () => {
     expect(EventListener.getListeners('page-view', 'ga')).toHaveLength(0)
     expect(EventListener.getListeners('checkout-finish', 'ga')).toHaveLength(1)
   })
+
+  test('測試 getEventListener', () => {
+    let target = new ListenerCreator({ flag: 'ga' })
+
+    expect(target.getEventListener()).toEqual(EventListener)
+  })
 })
