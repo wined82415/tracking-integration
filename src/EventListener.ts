@@ -16,14 +16,11 @@ export class EventListener {
    *
    * @returns Listener[]
    */
-  public static getListeners(
-    eventName: string,
-    flag: string = 'default'
-  ): Listener[] {
-    return filter(EventListener.eventPool, {
-      eventName,
-      flag
-    })
+  public static getListeners(eventName: string, flag?: string): Listener[] {
+    return filter(
+      EventListener.eventPool,
+      flag ? { eventName, flag } : { eventName }
+    ) as Listener[]
   }
 
   /**
