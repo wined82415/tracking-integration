@@ -1,5 +1,7 @@
+jest.disableAutomock()
+
 const { EventListener } = require('../src/EventListener.ts')
-const { ListenerCreator } = require('../src/ListenerCreator')
+const { ListenerCreator } = require('../src/ListenerCreator.ts')
 
 describe('監聽器製造器測試', () => {
   beforeEach(() => {

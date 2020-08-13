@@ -8,6 +8,8 @@ export class EventListener {
    */
   protected static eventPool: Listener[] = []
 
+  protected static onErrorCallback: Function = function() {}
+
   /**
    * 取得 事件監聽器
    *
@@ -76,8 +78,21 @@ export class EventListener {
   public static dispatch(eventName: string, eventData?: EventData) {
     from(EventListener.getListeners(eventName)).subscribe(
       (listener: Listener) => {
-        listener.handler.apply(listener, [eventData])
+        try {
+          listener.handler.apply(listener, [eventData])
+        } catch (e) {
+          this.onErrorCallback(listener, eventData, e)
+        }
       }
     )
+  }
+
+  /**
+   * 錯誤集中器
+   *
+   * @param callback
+   */
+  public static onError(callback: Function) {
+    this.onErrorCallback = callback
   }
 }

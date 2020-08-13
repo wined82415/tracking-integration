@@ -1,6 +1,6 @@
 const path = require('path')
 
-module.exports = {
+let config = {
   mode: 'production',
   devtool: 'source-map',
   entry: './src/index.ts',
@@ -30,3 +30,32 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   }
 }
+
+module.exports = [
+  {
+    ...config,
+    ...{
+      output: {
+        libraryTarget: 'umd',
+        library: 'tracking-integration',
+        umdNamedDefine: true,
+        globalObject: 'this',
+        filename: 'waudit.js',
+        path: path.resolve(__dirname, 'dist')
+      }
+    }
+  },
+  {
+    ...config,
+    ...{
+      output: {
+        libraryTarget: 'commonjs-module',
+        library: 'tracking-integration',
+        umdNamedDefine: true,
+        globalObject: 'this',
+        filename: 'waudit.esm.js',
+        path: path.resolve(__dirname, 'dist')
+      }
+    }
+  }
+]
